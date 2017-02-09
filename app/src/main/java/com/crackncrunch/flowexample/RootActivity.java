@@ -12,6 +12,14 @@ public class RootActivity extends AppCompatActivity {
     private FrameLayout mRootFrame;
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_root);
+
+        mRootFrame = (FrameLayout) findViewById(R.id.root_frame);
+    }
+
+    @Override
     protected void attachBaseContext(Context newBase) {
         newBase = Flow.configure(newBase, this)
                 .defaultKey(new RedScreen())
@@ -21,10 +29,15 @@ public class RootActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_root);
+    public void onBackPressed() {
+        if (getCurrentScreen() != null && !getCurrentScreen().viewBackPressed()
+                && !Flow.get(this).goBack()) {
+            // TODO: 09-Feb-17 implement exit dialog
+            super.onBackPressed();
+        }
+    }
 
-        mRootFrame = (FrameLayout) findViewById(R.id.root_frame);
+    private IView getCurrentScreen() {
+        return (IView) mRootFrame.getChildAt(0);
     }
 }
