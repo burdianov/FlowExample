@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 
 import com.crackncrunch.flowexample.IView;
 import com.crackncrunch.flowexample.R;
-import com.crackncrunch.flowexample.RedScreen;
+import com.crackncrunch.flowexample.SplashScreen;
 import com.crackncrunch.flowexample.flow.TreeKeyDispatcher;
 
 import flow.Flow;
@@ -19,6 +19,7 @@ public class RootActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_root);
 
         mRootFrame = (FrameLayout) findViewById(R.id.root_frame);
@@ -27,7 +28,7 @@ public class RootActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         newBase = Flow.configure(newBase, this)
-                .defaultKey(new RedScreen())
+                .defaultKey(new SplashScreen())
                 .dispatcher(new TreeKeyDispatcher(this))
                 .install();
         super.attachBaseContext(newBase);

@@ -10,4 +10,5 @@ import flow.ClassKey;
 
 @Screen(R.layout.screen_splash)
 public class SplashScreen extends ClassKey {
+
 }
