@@ -23,7 +23,7 @@ public class RootActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         newBase = Flow.configure(newBase, this)
                 .defaultKey(new RedScreen())
-                .dispatcher(new TreeKeyDispatcher())
+                .dispatcher(new TreeKeyDispatcher(this))
                 .install();
         super.attachBaseContext(newBase);
     }
