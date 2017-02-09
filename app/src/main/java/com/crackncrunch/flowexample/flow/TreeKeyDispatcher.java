@@ -1,4 +1,4 @@
-package com.crackncrunch.flowexample;
+package com.crackncrunch.flowexample.flow;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.crackncrunch.flowexample.R;
 
 import java.util.Collections;
 import java.util.Map;

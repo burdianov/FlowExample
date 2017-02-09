@@ -1,4 +1,4 @@
-package com.crackncrunch.flowexample;
+package com.crackncrunch.flowexample.flow;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

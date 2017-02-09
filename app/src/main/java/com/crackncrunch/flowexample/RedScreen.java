@@ -1,5 +1,7 @@
 package com.crackncrunch.flowexample;
 
+import com.crackncrunch.flowexample.flow.Screen;
+
 import flow.ClassKey;
 
 /**
